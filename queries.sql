@@ -33,10 +33,10 @@ BEGIN;
 UPDATE animals
 SET species = 'unspecified';
 /*Check changes*/
-SELECT * FROM animals;
+SELECT * FROM animals; 
 ROLLBACK;
-/*Check the table is restored to the state before the transaction*/
-SELECT * FROM animals;
+/*Check that table is restored to the state before the transaction*/
+SELECT * FROM animals; 
 
 /*Update the animals table by setting the species column to digimon for all animals that have a name ending in mon.*/
 UPDATE animals
