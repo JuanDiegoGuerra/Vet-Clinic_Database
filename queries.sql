@@ -46,7 +46,8 @@ WHERE name LIKE '%mon';
 /*Update the animals table by setting the species column to pokemon for all animals that don't have species already set.*/
 UPDATE animals
 SET species = 'pokemon'
-WHERE name NOT LIKE '%mon';
+WHERE species IS NULL;
+SELECT * FROM animals;
 
 /* Delete all animals born after Jan 1st, 2022. */
 DELETE FROM animals WHERE date_of_birth > '2022-01-01';
