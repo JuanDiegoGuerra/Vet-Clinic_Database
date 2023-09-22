@@ -152,10 +152,11 @@ SELECT a.name FROM animals a RIGHT JOIN visits v
   ORDER BY v.visit_date DESC
   LIMIT 1;
 /*How many different animals did Stephanie Mendez see?*/
-SELECT COUNT(DISTINCT a.name) 
-  FROM animals a RIGHT JOIN visits v 
-  ON a.id = v.animal_id 
-  WHERE v.vet_id = 2;
+SELECT COUNT(DISTINCT a.id) AS num_animals
+FROM animals a
+JOIN visits v ON a.id = v.animal_id
+JOIN vets vt ON vt.id = v.vet_id
+WHERE vt.name = 'Stephanie Mendez';
 /*List all vets and their specialties, including vets with no specialties.*/
 SELECT v.name, z.name
 FROM vets v
