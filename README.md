@@ -44,6 +44,10 @@ Vet Clinic DB</b></h1>
 
 In this project've created my first database for a veterinary clinic using PosgreSQL. With streamlined data organization and seamless integration, this database enables efficient tracking of medical records, appointments, treatments, and client information.
 
+# Data Base Diagram
+
+<img src="./VetClinic_Diagram.JPG" alt="logo"/>
+
 ## 🛠 Built With <a name="built-with"></a>
 
 - PostgreSQL
