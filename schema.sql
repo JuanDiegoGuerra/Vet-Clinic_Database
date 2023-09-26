@@ -1,8 +1,7 @@
-/* Database schema to keep the structure of entire database. */
 --DAY 01
 CREATE TABLE animals(
-   id 			   INT PRIMARY KEY 	 NOT NULL,
-   name            VARCHAR(150) 	 NOT NULL,
+   id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+   name            VARCHAR(150) 			NOT NULL,
    date_of_birth   DATE,
    escape_attempts INT,
    neutered        BOOLEAN,
@@ -31,7 +30,7 @@ ALTER TABLE animals
   ADD COLUMN owner_id INT,
   ADD FOREIGN KEY (species_id) REFERENCES species(id),
   ADD FOREIGN KEY (owner_id) REFERENCES owners(id);
-
+  
 --DAY 04
 CREATE TABLE vets (
   id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -54,3 +53,7 @@ CREATE TABLE visits (
   FOREIGN KEY (animal_id) REFERENCES animals(id),
   FOREIGN KEY (vet_id) REFERENCES vets(id)
 );
+
+--Performance Audit
+/* Add an email column to your owners table */
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
